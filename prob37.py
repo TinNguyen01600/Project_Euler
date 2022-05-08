@@ -30,7 +30,14 @@ def check_lr(n):
     #print(n)
     return n
 
+def check_rl(n):
+    while(prime(n) == 1):
+        n = int(n/10)
+    #print(n)
+    return n
+
 if __name__ == '__main__':
   n = int(input("enter number: "))
   print(prime(n))
   print(check_lr(n))
+  print(check_rl(n))
