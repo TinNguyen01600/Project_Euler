@@ -4,6 +4,9 @@ import random
 import re
 import sys
 
+# This problem has long execution time
+# Recommended run on Repl.it
+
 def prime(n):
   if (n <= 1):
     return 0
@@ -37,7 +40,18 @@ def check_rl(n):
     return n
 
 if __name__ == '__main__':
-  n = int(input("enter number: "))
-  print(prime(n))
-  print(check_lr(n))
-  print(check_rl(n))
+#   n = int(input("enter number: "))
+#   print(prime(n))
+#   print(check_lr(n))
+#   print(check_rl(n))
+  
+    n = 11
+    count = 0
+    sum = 0
+    while(count < 11):
+        if(check_rl(n) == 0 and check_lr(n) == 0):
+            count += 1
+            print(n)
+            sum += n
+            n+=2;
+    print("sum = ", sum)
