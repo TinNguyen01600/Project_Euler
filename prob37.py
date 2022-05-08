@@ -18,6 +18,19 @@ def prime(n):
     i = i + 6
   return 1;
 
+def check_lr(n):
+    temp = n
+    digits = 0
+    while(temp != 0):
+        digits += 1
+        temp = int(temp/10)
+    while(prime(n) == 1):
+        n = int(n % pow(10, digits-1))
+        digits -= 1
+    #print(n)
+    return n
+
 if __name__ == '__main__':
   n = int(input("enter number: "))
   print(prime(n))
+  print(check_lr(n))
