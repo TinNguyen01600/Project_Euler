@@ -4,6 +4,9 @@ import random
 import re
 import sys
 
+# This problem has long execution time
+# Recommended run on Repl.it
+
 def fac(n):
     if(n == 0):
         return 1
@@ -24,6 +27,14 @@ def check(n):
         return 0
     
 if __name__ == '__main__':
-    n = int(input("Enter number: "))
-    #print(fac(n))
-    print(check(n))
+    # n = int(input("Enter number: "))
+    # #print(fac(n))
+    # print(check(n))
+    
+    # since all 0 < n < 10 is not included 
+    # (because 1!, 2!, 3!, .. are not sums.), we start from n=10
+    n = 10
+    while(n<1000000):   #I think 1000000 is big enough :))
+        if(check(n)):
+            print(n)
+        n+=1
