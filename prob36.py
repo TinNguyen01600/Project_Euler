@@ -44,7 +44,15 @@ def check_2(n):     #check if n is palindrome in 2-base
         return 0
 
 if __name__ == '__main__':
-  n = int(input("Enter a number: "))
-  print(base_10_to_2(n))
-  print(check_10(n))
-  print(check_2(n))
+    #   n = int(input("Enter a number: "))
+    #   print(base_10_to_2(n))
+    #   print(check_10(n))
+    #   print(check_2(n))
+    n = 2
+    sum = 1
+    while(n<1000000):
+        if(check_10(n) and check_2(n)):
+            print(n)
+            sum += n
+        n+=1
+    print(sum)
