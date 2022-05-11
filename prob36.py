@@ -26,8 +26,25 @@ def check_10(n):    #check if n is palindrome in 10-base
         return 1
     else:
         return 0
+    
+def check_2(n):     #check if n is palindrome in 2-base
+    bin = base_10_to_2(n)
+    temp = n
+    i = 0
+    count = 0
+    while(temp != 0):
+        r = temp%2
+        if(r == int(bin[i])):
+            count += 1
+        temp = int(temp/2)
+        i+=1
+    if count == len(bin):
+        return 1
+    else:
+        return 0
 
 if __name__ == '__main__':
   n = int(input("Enter a number: "))
   print(base_10_to_2(n))
   print(check_10(n))
+  print(check_2(n))
