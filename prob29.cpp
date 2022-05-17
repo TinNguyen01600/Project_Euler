@@ -5,10 +5,10 @@
 using namespace std;
 
 int main(void){
-    long double arr[16];
+    long double arr[9801];
     int count = 0;
-    for (long double i = 2; i<=5; i++){
-        for(long double j = 2; j<=5; j++){
+    for (long double i = 2; i<=100; i++){
+        for(long double j = 2; j<=100; j++){
             arr[count] = pow(i, j);
             count++;
         }
