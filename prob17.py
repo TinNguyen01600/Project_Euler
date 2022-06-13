@@ -39,7 +39,16 @@ for i in range(21,100):  #21 to 99
   y = i - x
   sum += int((letter_count(x) + letter_count(y)))
 hundred_and = 10
+hundred = 7
 for i in range(100, 1000):  #100 to 999
+  k = i % 100
+  if(k == 0):
+    y = i // 100
+    sum += int(letter_count(y) + hundred)
+  elif(k <= 20):
+    y = i // 100
+    sum += int(letter_count(y) + hundred_and + letter_count(k))
+  else:
     x = i % 10
     y = i % 100 - x
     z = i // 100
