@@ -34,5 +34,14 @@ def letter_count(n):
 sum = 0
 for i in range(20):  #0 to 19
   sum += int(letter_count(i+1))  #1 to 20
-
+for i in range(21,100):  #21 to 99
+  x = i % 10
+  y = i - x
+  sum += int((letter_count(x) + letter_count(y)))
+hundred_and = 10
+for i in range(100, 1000):  #100 to 999
+    x = i % 10
+    y = i % 100 - x
+    z = i // 100
+    sum += int(letter_count(z) + hundred_and + letter_count(y) + letter_count(x))
 print(sum)
