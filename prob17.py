@@ -32,17 +32,17 @@ def letter_count(n):
   
 #print(letter_count(16))
 sum = 0
-for i in range(20):  #0 to 19
-  sum += int(letter_count(i+1))  #1 to 20
-for i in range(21,100):  #21 to 99
+for i in range(20):  # 0 to 19
+  sum += int(letter_count(i+1))  # 1 to 20
+for i in range(21,100):  # 21 to 99
   x = i % 10
   y = i - x
   sum += int((letter_count(x) + letter_count(y)))
 hundred_and = 10
 hundred = 7
-for i in range(100, 1000):  #100 to 999
+for i in range(100, 1000):  # 100 to 999
   k = i % 100
-  if(k == 0):
+  if(k == 0):   # hundreds (100, 200, 300, ...)
     y = i // 100
     sum += int(letter_count(y) + hundred)
   elif(k <= 20):
@@ -53,4 +53,5 @@ for i in range(100, 1000):  #100 to 999
     y = i % 100 - x
     z = i // 100
     sum += int(letter_count(z) + hundred_and + letter_count(y) + letter_count(x))
-print(sum)
+one_thousand = 11
+print(sum + 11)
