@@ -29,3 +29,10 @@ def letter_count(n):
     return 8
   if n in (nine):
     return 9
+  
+#print(letter_count(16))
+sum = 0
+for i in range(20):  #0 to 19
+  sum += int(letter_count(i+1))  #1 to 20
+
+print(sum)
