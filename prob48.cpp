@@ -9,8 +9,9 @@ use long long int), so I store its digits in an array
  */
 
 // with n>10, 10-digit array is incorrect
-// set the number of digit to 300
-const int len = 300;
+// set the number of digit to 3500 because 1000^1000 has over 
+// 3000 digits
+const int len = 3500;
 
 // This function only calculate and display last 10 digits of a self-power number
 int *self_power(int n){
@@ -54,11 +55,12 @@ int main(void){
     // plus1(arr1, arr2, result);
     // for (int i = 0; i<10; i++)  cout << result[i];
 
-    for(i = 1; i<=23; i++){
+    for(i = 1; i<=1000; i++){
         for (j = len-10; j<len; j++)  result[j] = 0;
         arr2 = self_power(i);
         plus1(arr1, arr2, result);
         for (k = len-10; k<len; k++)  arr1[k] = result[k];
     }
+    // print out the last 10 elements
     for (i = len-10; i<len; i++)  cout << result[i];
 }
