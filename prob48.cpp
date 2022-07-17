@@ -19,8 +19,24 @@ int *self_power(int n){
     return result;
 }
 
+void plus1(int arr1[], int arr2[], int result[]){
+  int n = 0;
+  for (int i = 9; i>=0; --i){
+    result[i] = arr1[i] + arr2[i] + n;
+    if(result[i] > 9)  {result[i] %= 10; n = 1;}
+    else n = 0;
+  }
+}
+
 int main(void){
     int *arr1 = new int [10];
+    int *arr2 = new int [10];
+    int *result = new int [10];
+
+    for (int i = 0; i<10; i++)  arr2[i] = 1;
+
     arr1 = self_power(5);
-    for (int i = 0; i<10; i++)  cout << arr1[i];
+    // for (int i = 0; i<10; i++)  cout << arr1[i];
+    plus1(arr1, arr2, result);
+    for (int i = 0; i<10; i++)  cout << result[i];
 }
