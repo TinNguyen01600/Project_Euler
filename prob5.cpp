@@ -34,37 +34,36 @@ int prime(int n){
 
 prime_factor *factorize(int n)  //this function divides a number n into prime factors
 {
-  prime_factor *a;
-  a = new prime_factor[5];
+    prime_factor *a;
+    a = new prime_factor[5];
+    int count = -1;
+    for(int i = 2; i <= n; i++){
+        if (!prime(i))  continue;
+        if (n%i != 0)   continue;
 
-  int count = -1;
-
-    for(int i = 1; i <= n; i++){
-      if(prime(i) && n%i == 0){
         count++;
-      }
-        
-      while(prime(i) && n%i == 0){
+        (*(a + count)).exponent = 0;
         (*(a + count)).index = i;
-        n/=i;
-        (*(a + count)).exponent ++;
-      }
+        while(n%i == 0){
+            n/=i;
+            (*(a + count)).exponent ++;
+        }
     }
-  
-  return a;
+    return a;
 }
 
 int main(void){
-  prime_factor *a;  //this array store the prime factors of EACH number from 1-20.
-                    //this array's length is 2
-  for (int i = 0; i<20; i++){
-    a = factorize(i+1);
-    cout << i << " = ";
-    for (int j = 0; j<2; j++){
-      cout << (*(a+j)).index << "^";
-      cout << (*(a+j)).exponent << " ";
+    prime_factor *a;  //this array store the prime factors of EACH number from 1-20.
+                        //this array's length is 2
+    for (int i = 0; i<20; i++){
+        a = factorize(i+1);
+        int t = 2;
+        if (prime(i+1))     t = 1;
+        cout << i+1 << " = ";
+        for (int j = 0; j<t; j++){
+            cout << (*(a+j)).index << "^";
+            cout << (*(a+j)).exponent << " ";
+        }
+        cout << endl;  
     }
-    cout << endl;  
-  }
-	
 }
